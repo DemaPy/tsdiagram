@@ -75,7 +75,7 @@ export const ModelNode = ({ id, data }: ModelNodeProps) => {
   const fieldRows = useMemo(() => {
     return model.schema.map((field) => {
       let unstableSelector = `${model.id}-source-${field.name}`;
-      if (field.name.includes(":")) {
+      if (field.name.includes('"')) {
         const fieldName = field.name.split(":");
         try {
           document.querySelector(unstableSelector);
